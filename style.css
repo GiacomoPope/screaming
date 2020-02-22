@@ -227,7 +227,8 @@ Mobile Styles
     position: absolute;
     width: calc(100%);
     padding: 0em;
-    height: auto;
+    height: 1em;
+    text-align: left;
   }
   .copyright{
     width: calc(100%);
