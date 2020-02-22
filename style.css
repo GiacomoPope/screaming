@@ -39,8 +39,9 @@ header{
   background-color: #F0F2EF;
   position: fixed;
   top: 0;
-  width: calc(100% - 2em);
+  width: calc(50% - 2em);
   text-align: right;
+  right: 0;
 }
 
 /*
@@ -57,7 +58,7 @@ body{
 }
 
 main{
-  margin-top: 4em;
+  margin-top: 3em;
 }
 
 .pageFlex{
@@ -93,7 +94,8 @@ ebooks
 
 .piece{
   display: block;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
+  padding-top: 1em;
   line-height: 1.43;
 }
 
@@ -118,6 +120,16 @@ ebooks
 
 .piece:target .content{
   display: block;
+}
+
+.authorName{
+  /* border-top: #43413455 1px solid; */
+  color: #434134bb;
+  text-align: right;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: 0.9em;
+  /* text-decoration: underline; */
 }
 
 .dinkus{
@@ -195,6 +207,11 @@ Medium Styles
 Mobile Styles
  */
 @media only screen and (max-width: 500px){
+
+  header{
+    width: calc(100% - 2em);
+    position: absolute;
+  }
 
   .pageFlex{
     flex-direction: column;
