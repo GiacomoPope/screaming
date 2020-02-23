@@ -356,6 +356,10 @@ Mobile Styles
     padding-top: 2em;
   }
 
+  ul{
+    padding-left: 0;
+  }
+
 
 
   /*
