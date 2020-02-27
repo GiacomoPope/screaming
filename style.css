@@ -196,6 +196,8 @@ About
    margin: 1em;
    text-align: right;
    line-height: 1.43;
+   position: fixed;
+   right: 0;
  }
 
  .about .pieceTitle{
@@ -324,6 +326,15 @@ Medium Styles
   .pieces{
     width: 70%;
   }
+
+  .about{
+    width: 20%;
+    margin: 1em;
+    text-align: right;
+    line-height: 1.43;
+    position: fixed;
+    right: 0;
+  }
 }
 /*
 Mobile Styles
@@ -354,6 +365,12 @@ Mobile Styles
     width: calc(100% - 24px);
     border-top: 1px #000 solid;
     padding-top: 2em;
+    position: relative;
+  }
+
+  .about .content{
+    display: block;
+    margin-left: 0;
   }
 
   ul{
