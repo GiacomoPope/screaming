@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+  <title>Screaming into a Horse's Mouth</title>
+
+  <meta name="description" content="Screaming into a Horse's Mouth is a website containing poetry" />
+  <link rel="canonical" href="https://screamingintoahorsesmouth.com" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Screaming into a Horse's Mouth" />
+  <meta property="og:description" content="Screaming into a Horse's Mouth is a website containing poetry" />
+  <meta property="og:url" content="https://screaming.surge.sh/" />
+  <meta property="og:site_name" content="Screaming into a Horse's Mouth" />
+  <meta property="og:image" content="https://screamingintoahorsesmouth.com/siahm.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Screaming into a Horse's Mouth" />
+  <meta name="twitter:description" content="Screaming into a Horse's Mouth is a website containing poetry" />
+  <meta name="twitter:site" content="https://screamingintoahorsesmouth.com" />
+  <meta name="twitter:image" content="https://screamingintoahorsesmouth.com/siahm.png" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body class="no-js">
+
+  <header>
+  Screaming into a Horse's Mouth
+  </header>
+
+  <main>
+
+  <div class="pageFlex">
+    <div class="pieces">
+
+      <!--
+          <div class="piece" id="">
+            <span class="pieceTitle"></span>
+            <div class="content">
+
+            <div class="authorName"></div>
+            <div class="shareLink"><span class="share">Share</span></div>
+            </div>
+          </div> -->
+
+
+      <div class="piece" id="knoles1">
+        <span class="pieceTitle">Menstruation Poem Number 40</span>
+        <div class="content">
+          I thought that when my period started, <br>
+          My depression would<br>
+          Flow out of me <br>
+          Like the blood.<br>
+          <br>
+          <br>
+          It’s still here.
+        <div class="authorName">Jessie Knoles</div>
+        <div class="shareLink"><span class="share">Share</span></div>
+        </div>
+      </div>
+
+      <div class="piece" id="knoles2">
+        <span class="pieceTitle">Seattle Memory Number 27</span>
+        <div class="content">
+        nothing makes me feel more like an animal than when rachel, my 61 year old coworker, leans over the register and tells me that the men in the plant store can sense my ovulation
+        <div class="authorName">Jessie Knoles</div>
+        <div class="shareLink"><span class="share">Share</span></div>
+        </div>
+      </div>
+
+      <div class="piece" id=knoles13>
+        <span class="pieceTitle">Calling in Sick</span>
+        <div class="content">
+          i just spent <br>
+          thirty minutes on a bench  <br>
+          trying to remember  <br>
+          whether or not  <br>
+          i had sex in this park  <br>
+          seven years ago <br>
+        <div class="authorName">Jessie Knoles</div>
+        <div class="shareLink"><span class="share">Share</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="piece about">
+      <span class="pieceTitle">About</span>
+      <div class="content">
+        Screaming into a Horse's Mouth is a website containing poetry.
+
+        <br><br>
+
+        <a href="https://tinyletter.com/screamingintoahorsesmouth">TinyLetter</a><br>
+        <a href="mailto:screamingintoahorsesmouth@gmail.com">Contact</a><br>
+
+        <br> <br>
+        <h3>Mouths</h3>
+        <ul>
+          <li>Mike Andrelczyk</li>
+          <li>Daniel Bailey</li>
+          <li>Molly Brodak</li>
+          <li>Cavin Bryce Gonzalez</li>
+          <li>Jessie Knoles</li>
+          <li>Babak Lakghomi</li>
+          <li>John Maradik</li>
+          <li>Emily Nicol</li>
+          <li>Giacomo Pope</li>
+          <li>Zac Smith</li>
+          <li>Andrew Weatherhead</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  </main>
+
+
+  <div class="shareOverlay" id="shareBox">
+        <div class="sharePop">
+          <!-- <h3>Share Poem</h3> -->
+          <input id="shareInput" type="text" name="" value="" readonly>
+          <button id="shareButton" type="button" name="button">Copy Link</button>
+        </div>
+  </div>
+
+
+
+  <div id="footer">
+  <div class="copyright">© Copyright 2020 Screaming into a Horse's Mouth. All Rights Reserved.</div>
+  </div>
+
+  <script>
+  $( document ).ready(function() {
+    $('body').removeClass('no-js');
+  });
+
+  $( ".pieceTitle" ).click(function() {
+    $(this).next().slideToggle(1000);
+  });
+
+  $( ".share" ).click(function() {
+    var base = 'https://screamingintoahorsesmouth.com/'
+    var id = $(this).parent().parent().parent().attr('id');
+    $('#shareButton').text('Copy Link');
+    $('#shareButton').css('backgroundColor', '#204f67');
+    $('#shareBox').css('display', 'flex');
+    $('#shareInput').attr('value', base+'#'+id);
+  });
+
+  $( "#shareButton" ).click(function() {
+    copyToClipboard();
+  });
+
+  $( "#shareInput" ).click(function() {
+    copyToClipboard();
+  });
+
+
+  function copyToClipboard(){
+    $('#shareInput').select();
+    document.execCommand("copy");
+    $('#shareButton').text('Copied!');
+    $('#shareButton').css('backgroundColor', '#326f52');
+  }
+
+  document.body.onkeydown = function(e){
+    e = e || window.e;
+    var keycode = e.charCode || e.keyCode;
+    if( (keycode === 27) && $('#shareBox').css("display") == "flex"){
+      $('#shareBox').css("display", "none");
+    }
+  }
+  $(document).bind( "mouseup", function(e){
+    var container = $(".sharePop");
+    if (!container.is(e.target) && container.has(e.target).length === 0 && $('#shareBox').css("display") == "flex"){
+      $('#shareBox').css("display", "none");
+    }
+  });
+  </script>
+
+
+
+</body>
+</html>
