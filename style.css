@@ -93,6 +93,11 @@ input{
   justify-content: space-between;
 }
 
+.thin{
+  width: 18em;
+  text-align: justify;
+}
+
 /*
 Link Styles
  */
